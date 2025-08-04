@@ -36,6 +36,7 @@ jobs:
           -r cli,htmlextra
 
     - name: Newman Report
+      if: always() #ensure thatt he archive section is going to be execute irrespective whther th eprevious tep has passed or not
       uses: actions/upload-artifact@v4.6.2
       with: 
         name: Newman Report
