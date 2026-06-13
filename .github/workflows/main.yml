@@ -51,16 +51,16 @@ jobs:
          publish_dir: newman/
 
     - name: Send email Notification
-      if: alwayas()
+      if: always()
       uses: dawidd6/action-send-mail@v6
       with: 
-         server_address: ssmtp.gmail.com 
+         server_address: smtp.gmail.com
          server_port: 465
          username: ${{ secrets.EMAIL_USERNAME }}
          password:  ${{ secrets.EMAIL_PASSWORD }}
          subject: API Test Report - Github Actions
          to: mitukumari2024@gmail.com
-         from: Mitu from Github Actions <${{ secrets.EMAIL_USERNAME }}
+         from: Mitu from Github Actions <${{ secrets.EMAIL_USERNAME }}>
          body: |
              Hello,
              Please find the attached html report generated adter running the \Postman test via Github Actions.
